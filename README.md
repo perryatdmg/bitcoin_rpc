@@ -1,21 +1,23 @@
 
 
 
-# python_essentials
-> Basic setup required for a Python project under Visual Studio Code. To fully understand this project you want to go to the authority on how to setup a Python project under Visual Studio Code here:<br/>
 
+# bitcoin_rpc
+> Basic setup required for a Python project under Visual Studio Code that can make RPC calls to a Bitcoin node.<br/>
+## Tools Required
+To setup the tools required this project visit the following links:
 - [Getting Started with Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial)<br/>
 - [Python testing in Visual Studio Code](https://code.visualstudio.com/docs/python/testing)<br/>
 
-This project is just a starting template for Python projects.</br>
+This project is just a starting template for Python based projects that wish to make Bitcoin RPC calls.</br>
 Python3 is recommended for use with this project: [Python 3 Installation & Setup Guide](https://realpython.com/installing-python/)
 
 ![pytest](https://github.com/perryatdmg/basic_python/blob/main/etc/img/Basic_Python.png)
 
-## python_essentials as a template
-> **python_essentials** is available as template for Python projects on github. 
-## python_essentials setup
-> **python_essentials** is meant to be used inside it's own environment
+## bitcoin_rpc as a template
+> **bitcoin_rpc** is available as template for Python projects on github. 
+## bitcoin_rpc setup
+> **bitcoin_rpc** is meant to be used inside it's own environment
 
     sudo apt install python3.8-venv
     python3 -m venv .venv
@@ -24,14 +26,14 @@ Python3 is recommended for use with this project: [Python 3 Installation & Setup
 ## **NOTE** 
 > To make sure that Visual Studio Code is using the same environment space as determined by 'source .venv/bin/activate' simply close the ide instance and restart it again inside a terminal:
 
-    git clone https://github.com/perryatdmg/python_essentials.git your_project
+    git clone https://github.com/perryatdmg/bitcoin_rpc.git your_project
     cd your_project
     python3 -m venv .venv
     source .venv/bin/activate
     code . 
 
-## python_essentials with pytest
-> **python_essentials** can be used with the three most popular Python unit test case frameworks but this one is using pytest by default. Therefore, (once you have your environment setup) you should add pytest to your environment. Also for the purposes of this particular project the matplotlib and numpy are also used:
+## bitcoin_rpc with pytest
+> **bitcoin_rpc** can be used with the three most popular Python unit test case frameworks but this one is using pytest by default. Therefore, (once you have your environment setup) you should add pytest to your environment. Also for the purposes of this particular project the matplotlib and numpy are also used:
 
     pip install -U pytest matplotlib numpy 
 
