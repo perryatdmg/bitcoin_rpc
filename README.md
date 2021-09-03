@@ -2,6 +2,7 @@
 
 
 
+
 # bitcoin_rpc
 > Basic setup required for a Python project under Visual Studio Code that can make RPC calls to a Bitcoin node.<br/>
 ## Tools Required
@@ -37,9 +38,37 @@ Python3 is recommended for use with this project: [Python 3 Installation & Setup
 
     pip install -U pytest matplotlib numpy 
 
+## bitcoin-requests 2.0.0
+This Github repository makes extensive use of the pipy.org library known as **bitcoin-requests**, (version 2.0.0)
+[bitcoin-requests](https://pypi.org/project/bitcoin-requests/)
+
+	from bitcoin_requests import BitcoinRPC
+	rpc = BitcoinRPC('http://127.0.0.1:18443', 'user', 'pass')
+	blocks = rpc.generate(101)
+	tx = rpc.sendtoaddress(address, 20)
+
+In the above code segment, a standard URL is required along with a username and password to gain access to a Bitcoin node by way of RPC, (or **remote-procedure calls**). 
+
+**GIVEN** that socket programming, (especially using URLs) can be complicated
+**WHEN** we start of with a simple implementation of Bitcoin RPC for a given project
+**THEN** we can verify our steps towards more complicated applications
+
+## The Plan
+We will develop bitcoin_rpc in the following manner:
+
+ 1. Testing it on an instance of **bitcoind** running on the same Linux box
+ 2. Testing it on an instance of **bitcoind** running on the two different Linux boxes, (same machine)
+ 3. Testing it on an instance of **bitcoind** running on the two different Linux boxes, (different  machines)
+ 4.  Testing it on an instance of **bitcoind** running on the two different Linux boxes across the Internet
+
+## Bitcoin
+In order to use the bitcoin_rpc package you will need a Bitcoin Node running to make RPC calls against. The parameters for running a Bitcoin Node in testmode are as follows:
+
+
 
 ## Why use an IDE?
 > The following are examples of (pytest) debugging Python inside Visual Studio Code:
+
 
 Here we have your typical Python source code, (as methods) to be unit tested:
 ![pytest](https://github.com/perryatdmg/basic_python/blob/main/etc/img/000.png)</br>
