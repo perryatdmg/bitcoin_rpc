@@ -64,8 +64,92 @@ We will develop bitcoin_rpc in the following manner:
 ## Bitcoin
 In order to use the bitcoin_rpc package you will need a Bitcoin Node running to make RPC calls against. The parameters for running a Bitcoin Node in testmode are as follows:
 
+The following parameters have to be set:
+#### **NETWORK-RELATED**  **SETTINGS**
+	   **testnet=**['1'|'0']
+              Enable or disable run on the test network instead of the real *bitcoin* network.
 
+       **proxy=**'127.0.0.1:9050'
+              Connect via a socks4 proxy.
 
+       **addnode=**'10.0.0.2:8333'
+              Use as many *addnode=* settings as you like to connect to specific peers.
+
+       **connect=**'10.0.0.1:8333'
+              Use as many *connect=* settings as you like to connect ONLY to specific peers.
+
+       **noirc=**['1'|'0']
+              Use  or  Do  not  use  Internet Relay Chat (irc.lfnet.org #bitcoin channel) to find
+              other peers.
+
+       maxconnections='value'
+              Maximum number of inbound+outbound connections.
+
+#### **JSON-RPC**  **OPTIONS**
+
+	   **server=**['1'|'0']
+	              Tells *bitcoin* to accept or not accept JSON-RPC commands.
+
+       **rpcuser=**'username'
+              You must set *rpcuser* to secure the JSON-RPC api.
+
+       **rpcpassword=**'password'
+              You must set *rpcpassword* to secure the JSON-RPC api.
+
+       **rpctimeout=**'30'
+              How many seconds *bitcoin* will wait for a complete RPC  HTTP  request,  after  the
+              HTTP connection is established.
+
+       **rpcallowip=**'192.168.1.*'
+              By  default,  only  RPC  connections  from  localhost  are allowed. Specify as many
+              *rpcallowip=* settings as you like to allow connections from other hosts  (and  you
+              may use * as a wildcard character).
+
+       **rpcport=**'8332'
+              Listen for RPC connections on this TCP port.
+
+       **rpcconnect=**'127.0.0.1'
+              You  can use *bitcoin* or *[bitcoind](http://manpages.ubuntu.com/manpages/precise/en/man1/bitcoind.1.html)(1)* to send commands to *bitcoin*/*[bitcoind](http://manpages.ubuntu.com/manpages/precise/en/man1/bitcoind.1.html)(1)*
+              running on another host using this option.
+
+       **rpcssl=**'1'
+              Use Secure Sockets Layer (also known as TLS or HTTPS) to communicate with *bitcoin*
+              '-server' or *[bitcoind](http://manpages.ubuntu.com/manpages/precise/en/man1/bitcoind.1.html)(1)*. Example of OpenSSL settings used when *rpcssl*='1':
+
+       **rpcsslciphers=**'TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH'
+
+       **rpcsslcertificatechainfile=**'server.cert'
+
+       **rpcsslprivatekeyfile=**'server.pem'
+
+       **MISCELLANEOUS** **OPTIONS**
+
+       **gen=**['0'|'1']
+              Enable or disable attempt to generate bitcoins.
+
+       **4way=**['0'|'1']
+              Enable or disable use SSE instructions to try to generate bitcoins faster.
+
+       **keypool=**'100'
+              Pre-generate  this  many  public/private key pairs, so wallet backups will be valid
+              for both prior transactions and several dozen future transactions.
+
+       **paytxfee=**'0.00'
+              Pay an optional transaction fee every time you  send  bitcoins.  Transactions  with
+              fees  are more likely than free transactions to be included in generated blocks, so
+              may be validated sooner.
+
+       **allowreceivebyip=**'1'
+              Allow direct connections for the 'pay via IP address' feature.
+
+       **USER** **INTERFACE** **OPTIONS**
+
+       **min=**['0'|'1']
+              Enable or disable start bitcoind minimized.
+
+       **minimizetotray=**['0'|'1']
+              Enable or disable minimize to the system tray.
+              
 ## Why use an IDE?
 > The following are examples of (pytest) debugging Python inside Visual Studio Code:
 
